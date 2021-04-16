@@ -1,0 +1,2 @@
+# ignore everything in the "wp-content" directory, except:
+wp-content/*
