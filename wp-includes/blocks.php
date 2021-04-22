@@ -148,7 +148,7 @@ function register_block_script_handle( $metadata, $field_name ) {
  *
  * @since 5.5.0
  *
- * @param array  $metadata   Block metadata.
+ * @param array  $metadata Block metadata.
  * @param string $field_name Field name to pick from metadata.
  * @return string|false Style handle provided directly or created through
  *                      style's registration, or false on failure.
@@ -902,29 +902,9 @@ function register_block_style( $block_name, $style_properties ) {
  * @since 5.3.0
  *
  * @param string $block_name       Block type name including namespace.
- * @param string $block_style_name Block style name.
+ * @param array  $block_style_name Block style name.
  * @return bool True if the block style was unregistered with success and false otherwise.
  */
 function unregister_block_style( $block_name, $block_style_name ) {
 	return WP_Block_Styles_Registry::get_instance()->unregister( $block_name, $block_style_name );
-}
-
-/**
- * Checks whether the current block type supports the feature requested.
- *
- * @since 5.8.0
- *
- * @param WP_Block_Type $block_type Block type to check for support.
- * @param string        $feature    Name of the feature to check support for.
- * @param mixed         $default    Fallback value for feature support, defaults to false.
- *
- * @return boolean                  Whether or not the feature is supported.
- */
-function block_has_support( $block_type, $feature, $default = false ) {
-	$block_support = $default;
-	if ( $block_type && property_exists( $block_type, 'supports' ) ) {
-		$block_support = _wp_array_get( $block_type->supports, $feature, $default );
-	}
-
-	return true === $block_support || is_array( $block_support );
 }
