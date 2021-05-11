@@ -77,10 +77,19 @@ $table_prefix = 'hdq_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
+
+ // This enables debugging.
 define( 'WP_DEBUG', true );
+//enable debug logging
+define( 'WP_DEBUG_LOG', true );
+//script debug
+define( 'SCRIPT_DEBUG', true );
+
 define('WP_MEMORY_LIMIT', '768M');
+
 @ini_set( 'upload_max_size' , '256M' );
-@ini_set( 'post_max_size', '25M');
+
+@ini_set( 'post_max_size', '256M');
 
 /* That's all, stop editing! Happy publishing. */
 
