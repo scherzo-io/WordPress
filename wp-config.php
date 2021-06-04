@@ -1,4 +1,6 @@
 <?php
+define( 'WP_CACHE', false ); // Added by WP Rocket
+
 /**
  * The base configuration for WordPress
  *
@@ -26,7 +28,7 @@ define( 'DB_NAME', 'fds-wp' );
 define( 'DB_USER', 'fdswpusr' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'FdsWp2275!' );
+define( 'DB_PASSWORD', 'Data808***' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
